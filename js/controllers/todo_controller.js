@@ -17,17 +17,17 @@ Todos.TodoController = Ember.ObjectController.extend({
     this.get('store').commit();
   },
 
-  isCompleted: function(key, value){
+  iscompleted: function(key, value){
     var model = this.get('model');
 
     if (value === undefined) {
       // property being used as a getter
-      return model.get('isCompleted');
+      return model.get('iscompleted');
     } else {
       // property being used as  setter
-      model.set('isCompleted', value);
+      model.set('iscompleted', value);
       this.get('store').commit();
       return value
     }
-  }.property('model.isCompleted')
+  }.property('model.iscompleted')
 });

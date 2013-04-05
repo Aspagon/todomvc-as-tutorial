@@ -6,11 +6,11 @@ Todos.Router.map(function () {
   });
 });
 
-Todos.TodosRoute = Ember.Route.extend({
+/*Todos.TodosRoute = Ember.Route.extend({
   model: function () {
     return Todos.Todo.find();
   }
-});
+});*/
 
 Todos.TodosIndexRoute = Ember.Route.extend({
   model: function () {
@@ -21,7 +21,7 @@ Todos.TodosIndexRoute = Ember.Route.extend({
 Todos.TodosActiveRoute = Ember.Route.extend({
   model: function(){
     return Todos.Todo.filter(function (todo) {
-      if (!todo.get('isCompleted')) { return true; }
+      if (!todo.get('iscompleted')) { return true; }
     });
   },
   renderTemplate: function(controller){
@@ -32,7 +32,7 @@ Todos.TodosActiveRoute = Ember.Route.extend({
 Todos.TodosCompletedRoute = Ember.Route.extend({
   model: function(){
     return Todos.Todo.filter(function (todo) {
-      if (todo.get('isCompleted')) { return true; }
+      if (todo.get('iscompleted')) { return true; }
     });
   },
   renderTemplate: function(controller){
